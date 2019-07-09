@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0.rc1'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
-
+gem 'bcrypt', '~> 3.1.7'
 group :assets do
   gem 'sass-rails', '~> 5.0', '>= 5.0.7'
   gem 'uglifier', '~> 4.1', '>= 4.1.20'

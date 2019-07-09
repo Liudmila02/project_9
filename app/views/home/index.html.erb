@@ -1,0 +1,12 @@
+<nav>
+<% if current_user %>
+  Signed in as <%= current_user.email %>.
+  <%= link_to "Sign Out", signout_path, class: "btn btn-info" %>
+<% else %>
+  <%= link_to "Sign Up", signup_path, class: "btn btn-info" %> 
+  <%= link_to "Sign In", signin_path, class: "btn btn-info" %>
+<% end %>
+</nav>
+<p id="notice"><%= notice %></p>
+<h1>Task management system</h1>
+<p>Do you want to create own tasks? To do this, you need to sign up or sign in to the system</p>
