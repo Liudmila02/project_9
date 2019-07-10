@@ -7,6 +7,4 @@ helper_method :current_user
       @current_user = nil
     end
   end
-
-
 end
