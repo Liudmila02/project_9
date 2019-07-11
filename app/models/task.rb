@@ -5,7 +5,6 @@ class Task < ApplicationRecord
     ['Next', 2],
     ['Now', 3]
 	]
-
 	def complete!
 		self.completed = true
 		save

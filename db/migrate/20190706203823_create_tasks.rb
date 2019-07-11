@@ -1,13 +1,13 @@
-class CreateTasks < ActiveRecord::Migration[6.0]
+class CreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table :tasks do |t|
-      t.string :title
-      t.text :description
-      t.integer :priority
-      t.date :due_date
-      t.boolean :completed
+    create_table :users do |t|
+      t.string :first_name
+      t.string :last_name
+      t.string :email
+      t.string :password_digest
 
       t.timestamps
     end
+    add_index :users, :email, unique: true
   end
 end

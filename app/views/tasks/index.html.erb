@@ -29,6 +29,9 @@
 	  <%= render partial: 'task', object: task %>
 	<% end %>
   </div>
-
+<br>
+<% if user_signed_in? %>
+<%= link_to "New Task", new_task_path, class:"btn btn-primary" %>
+<% end %>
 
 </div>

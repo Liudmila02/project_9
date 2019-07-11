@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 	def index
 		@tasks = Task.where(completed: false).order('priority DESC')
 		@completed_tasks = Task.where(completed: true).order('updated_at')
+    
   end
 
   def new
