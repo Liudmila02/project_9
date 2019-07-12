@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-	belongs_to :user
+	#belongs_to :user
 	PRIORITIES = [
     ['Later', 1],
     ['Next', 2],

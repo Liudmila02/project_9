@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2019_07_08_155531) do
 
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "priority"
+    t.date "due_date"
+    t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+  
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -22,15 +32,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_155531) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
   
-  create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "priority"
-    t.date "due_date"
-    t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  
 
   
 
