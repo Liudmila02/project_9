@@ -7,5 +7,5 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
     validates :password, length: { minimum: 6 }, presence: true
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, stretches: 12
+  
 end
