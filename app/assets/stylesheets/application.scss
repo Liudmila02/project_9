@@ -1,5 +1,10 @@
+p{
+	text-align: center;
+}
+
 
 body {font-size: 1.75em}
+
 
 .buffer-top {
   margin-top: 2em;
@@ -8,9 +13,9 @@ body {font-size: 1.75em}
 .task {
   margin-bottom: 2em;
 
-  .action {opacity: 0;}
+.action {opacity: 0;}
 
-  &:hover .action {
+&:hover .action {
     opacity: 1;
     transition: opacity 0.5s ease;
   }
@@ -22,31 +27,8 @@ body {font-size: 1.75em}
  .completed_true .title {color: #c0c0c0; text-decoration: line-through}
 
 .done {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
-.form-inputs {
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  right: 100px;
-  bottom: 100px;
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
-.alert {
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  right: 100px;
-  bottom: 100px;
-  display: block;
-  font-size: 35pt;
-}
-td {
-  text-align:center;
-  font-size: 0.4em;
 
-}
 

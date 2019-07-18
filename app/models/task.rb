@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
-	#belongs_to :user
+	belongs_to :user, -> { where active: true },
+                        dependent: :destroy
+	
 	PRIORITIES = [
     ['Later', 1],
     ['Next', 2],
@@ -9,4 +11,5 @@ class Task < ApplicationRecord
 		self.completed = true
 		save
 	end
+	
 end

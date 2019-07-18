@@ -1,17 +1,23 @@
 class TasksController < ApplicationController
 	def index
-		@tasks = Task.where(completed: false).order('priority DESC')
+  	@tasks = Task.where(completed: false).order('priority DESC')
     @completed_tasks = Task.where(completed: true).order('updated_at')
+
   end
 
   def new
   	@task = Task.new
   end
-  
+  def show
+    @task = Task.find params[:id]
+  end
+
   def create
   	@task = Task.new task_params
   	@task.save
   	redirect_to tasks_path
+
+    
   end
 
   def edit

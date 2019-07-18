@@ -1,13 +1,3 @@
-<header>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Task management system</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <span class="p-2 text-dark" ><%= link_to "Sign Up", signup_path, class: "btn btn-outline-primary" %></span>
-      <span class="p-2 text-dark" ><%= link_to "Sign In", signin_path, class: "btn btn-outline-primary" %></span>
-      <span class="p-2 text-dark" ><%= link_to "Sign Out", signout_path, class: " btn btn-outline-primary" %></span>
-    </nav>
-</div>
-</header>
 <div class="col-md-12">
 	<h1>My Tasks</h1>
   <div class="buffer-top">
@@ -26,8 +16,4 @@
 	  <%= render partial: 'task', object: task %>
 	<% end %>
   </div>
-
-
-
-
 </div>

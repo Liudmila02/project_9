@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  
   def index
     @users = User.all
   end
@@ -31,20 +31,26 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
   def destroy
-    @user.destroy
-    redirect_to root_url, notice: "Signed out!"
+      @user.destroy
+      redirect_to root_url, notice: "Signed out!"
+      if session[:user_id] = nil
+      redirect_to new_user_path
+      end
   end
 
   private
     def set_user
       @user = User.find(params[:id])
+      if @user == current_user
+        @user
+      else
+        redirect_to root_path, notice: "You can't visit someone else!"
+      end 
     end
-
+ 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-    end
-
-    
+    end 
 end
+
