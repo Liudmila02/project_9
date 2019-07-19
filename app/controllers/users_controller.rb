@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       redirect_to root_url, notice: "Signed out!"
       if session[:user_id] = nil
       redirect_to new_user_path
-      end
+    end
   end
 
   private

@@ -1,49 +1,50 @@
 class TasksController < ApplicationController
-	def index
+  def index
   	@tasks = Task.where(completed: false).order('priority DESC')
     @completed_tasks = Task.where(completed: true).order('updated_at')
-
-  end
+  end  
 
   def new
-  	@task = Task.new
+  	@task = current_user.tasks.build
   end
+
   def show
-    @task = Task.find params[:id]
+    @task = current_user.tasks.find params[:id]
   end
 
   def create
-  	@task = Task.new task_params
-  	@task.save
-  	redirect_to tasks_path
-
-    
+   	@task = current_user.tasks.build(task_params)
+  	if @task.save
+  	  redirect_to @task, notive:'Task was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
-  	@task = Task.find params[:id]
+  	@task = current_user.tasks.find params[:id] 
   end
 
   def update
-  	@task = Task.find params[:id]
-  	@task.update_attributes task_params
+  	@task = current_user.tasks.find params[:id]
+    @task.update_attributes task_params
   	redirect_to tasks_path
   end
 
   def complete
-  	@task = Task.find params[:id]
-  	@task.complete!
-  	redirect_to tasks_path
+    @task = current_user.tasks.find params[:id]
+    @task.complete!
+    redirect_to tasks_path
   end
 
   def destroy
-  	@task = Task.find params[:id]
+  	@task = current_user.tasks.find params[:id]
   	@task.destroy
   	redirect_to tasks_path
   end
 
+private
   def task_params
-  	params.require(:task).permit([
-  		:title, :description, :priority, :due_date, :completed])
- end
+  	params.require(:task).permit([:title, :description, :priority, :due_date, :completed])
+  end
 end

@@ -22,11 +22,12 @@ group :production do
 end
 
 group :development, :test do
-  
   gem 'byebug'
 end
+
 gem 'bootsnap', require: false
 gem 'listen', '~> 3.1', '>= 3.1.5'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'sqlite3', '~> 1.4', '>= 1.4.1'
