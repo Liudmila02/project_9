@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
 	belongs_to :user, :foreign_key=>'user_id'
-	
+
 	PRIORITIES = [
     ['Later', 1],
     ['Next', 2],
@@ -11,4 +11,11 @@ class Task < ApplicationRecord
 		self.completed = true
 		save
 	end
+
+	validate :check_due_date
+	def check_due_date
+		if due_date < Date.today
+           errors.add(:due, "can only be today or later.")
+       end
+    end
 end
