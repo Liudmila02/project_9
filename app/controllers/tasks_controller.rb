@@ -48,3 +48,5 @@ private
   	params.require(:task).permit([:title, :description, :priority, :due_date, :completed])
   end
 end
+ 
+

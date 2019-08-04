@@ -1,0 +1,8 @@
+<%= simple_form_for @task do |f| %>
+  <p><%= f.input :title %></p>
+  <p><%= f.input :description %></p>
+  <p><%= f.select :priority, Task::PRIORITIES %></p>
+  <p><%= f.date_field :due_date, min: Date.today %></p>
+  <p><%= f.input :completed %></p>
+  <p><%= f.button :submit %></p>
+<% end %>
