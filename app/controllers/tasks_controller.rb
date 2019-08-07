@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
-  	@tasks = Task.where(completed: false).order('priority DESC')
-    @completed_tasks = Task.where(completed: true).order('updated_at')
+    @tasks = current_user.tasks.where(completed: false).order('priority DESC')
+    @completed_tasks = current_user.tasks.where(completed: true).order('updated_at')
   end  
 
   def new
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-  	@task = current_user.tasks.find params[:id]
+    @task = current_user.tasks.find params[:id]
   	@task.destroy
   	redirect_to tasks_path
   end
