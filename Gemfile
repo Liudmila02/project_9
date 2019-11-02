@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'bcrypt', '~> 3.1.7'
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 group :assets do
   gem 'sass-rails', '~> 5.0', '>= 5.0.7'
   gem 'uglifier', '~> 4.1', '>= 4.1.20'
